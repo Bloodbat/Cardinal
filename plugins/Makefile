@@ -1037,6 +1037,14 @@ PLUGIN_FILES += $(filter-out repelzen/src/repelzen.cpp,$(wildcard repelzen/src/*
 REPELZEN_CUSTOM = Blank Mixer Werner tanh_pade
 
 # --------------------------------------------------------------
+# Sanguine Monsters
+PLUGIN_FILES += $(filter-out SanguineMonsters/src/plugin.cpp,$(wildcard SanguineMonsters/src/*.cpp))
+
+PLUGIN_FILES += SanguineMonsters/SanguineModulesCommon/src/sanguinecomponents.cpp
+PLUGIN_FILES += SanguineMonsters/SanguineModulesCommon/src/sanguinehelpers.cpp
+PLUGIN_FILES += SanguineMonsters/SanguineModulesCommon/src/themes.cpp
+
+# --------------------------------------------------------------
 # Sapphire
 
 PLUGIN_FILES += $(filter-out Sapphire/src/plugin.cpp,$(wildcard Sapphire/src/*.cpp))
@@ -2751,6 +2759,16 @@ $(BUILD_DIR)/repelzen/%.cpp.o: repelzen/%.cpp
 	$(SILENT)$(CXX) $< $(BUILD_CXX_FLAGS) -c -o $@ \
 		$(foreach m,$(REPELZEN_CUSTOM),$(call custom_module_names,$(m),repelzen)) \
 		-DpluginInstance=pluginInstance__repelzen
+
+$(BUILD_DIR)/SanguineMonsters/%.o: SanguineMonsters/%
+	-@mkdir -p "$(shell dirname $(BUILD_DIR)/$<)"
+	@echo "Compiling $<"
+	$(SILENT)$(CXX) $< $(BUILD_CXX_FLAGS) -std=gnu++17 -c -o $@ \
+		$(foreach m,$(SANGUINEMONSTERS_CUSTOM),$(call custom_module_names,$(m),SanguineMonsters)) \
+		-DpluginInstance=pluginInstance__SanguineMonsters \
+		-DCARDINALMONSTERS \
+		-ISanguineMonsters/SanguineModulesCommon/src \
+		-ISanguineMonsters/SanguineModulesCommon/pcgcpp
 
 $(BUILD_DIR)/Sapphire/%.cpp.o: Sapphire/%.cpp
 	-@mkdir -p "$(shell dirname $(BUILD_DIR)/$<)"
