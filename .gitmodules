@@ -266,3 +266,6 @@
 [submodule "plugins/Venom"]
 	path = plugins/Venom
 	url = https://github.com/DaveBenham/VenomModules
+[submodule "plugins/SanguineMutants"]
+	path = plugins/SanguineMutants
+	url = https://github.com/Bloodbat/SanguineMutants

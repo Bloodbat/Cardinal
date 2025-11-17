@@ -862,6 +862,11 @@ void addThemeMenuItems(Menu*, ModuleTheme*) {}
 #undef modelWerner
 #undef tanh_pade
 
+// Sanguine Mutants
+#define CARDINALMUTANTS
+#include "SanguineMutants/src/plugin.hpp"
+#undef CARDINALMUTANTS
+
 // Sapphire
 #include "Sapphire/src/plugin.hpp"
 
@@ -1025,6 +1030,7 @@ Plugin* pluginInstance__rackwindows;
 Plugin* pluginInstance__RCM;
 Plugin* pluginInstance__RebelTech;
 Plugin* pluginInstance__repelzen;
+Plugin* pluginInstance__SanguineMutants;
 Plugin* pluginInstance__sapphire;
 Plugin* pluginInstance__sonusmodular;
 Plugin* pluginInstance__StarlingVia;
@@ -3236,6 +3242,42 @@ static void initStatic__repelzen()
     }
 }
 
+static void initStatic__SanguineMutants()
+{
+    Plugin* const p = new Plugin;
+    pluginInstance__SanguineMutants = p;
+
+    const StaticPluginLoader spl(p, "SanguineMutants");
+    if (spl.ok())
+    {
+        p->addModel(modelFunes);
+        p->addModel(modelMutantsBlank);
+        p->addModel(modelApices);
+        p->addModel(modelAleae);
+        p->addModel(modelNodi);
+        p->addModel(modelContextus);
+        p->addModel(modelNebulae);
+        p->addModel(modelEtesia);
+        p->addModel(modelMortuus);
+        p->addModel(modelFluctus);
+        p->addModel(modelIncurvationes);
+        p->addModel(modelDistortiones);
+        p->addModel(modelMutuus);
+        p->addModel(modelExplorator);
+        p->addModel(modelMarmora);
+        p->addModel(modelAnuli);
+        p->addModel(modelVelamina);
+        p->addModel(modelAestus);
+        p->addModel(modelTemulenti);
+        p->addModel(modelVimina);
+        p->addModel(modelScalaria);
+        p->addModel(modelNix);
+        p->addModel(modelAnsa);
+
+        getMutantsDefaultTheme();
+    }
+}
+
 static void initStatic__Sapphire()
 {
     Plugin* const p = new Plugin;
@@ -3785,6 +3827,7 @@ void initStaticPlugins()
     initStatic__RCM();
     initStatic__RebelTech();
     initStatic__repelzen();
+    initStatic__SanguineMutants();
     initStatic__Sapphire();
     initStatic__sonusmodular();
     initStatic__StarlingVia();
