@@ -862,6 +862,11 @@ void addThemeMenuItems(Menu*, ModuleTheme*) {}
 #undef modelWerner
 #undef tanh_pade
 
+// Sanguine Monsters
+#define CARDINALMONSTERS
+#include "SanguineMonsters/src/plugin.hpp"
+#undef CARDINALMONSTERS
+
 // Sanguine Mutants
 #define CARDINALMUTANTS
 #include "SanguineMutants/src/plugin.hpp"
@@ -1030,6 +1035,7 @@ Plugin* pluginInstance__rackwindows;
 Plugin* pluginInstance__RCM;
 Plugin* pluginInstance__RebelTech;
 Plugin* pluginInstance__repelzen;
+Plugin* pluginInstance__SanguineMonsters;
 Plugin* pluginInstance__SanguineMutants;
 Plugin* pluginInstance__sapphire;
 Plugin* pluginInstance__sonusmodular;
@@ -3242,6 +3248,41 @@ static void initStatic__repelzen()
     }
 }
 
+static void initStatic__SanguineMonsters()
+{
+    Plugin* const p = new Plugin;
+    pluginInstance__SanguineMonsters = p;
+
+    const StaticPluginLoader spl(p, "SanguineMonsters");
+    if (spl.ok())
+    {
+        p->addModel(modelSuperSwitch81);
+        p->addModel(modelSuperSwitch18);
+        p->addModel(modelMonstersBlank);
+        p->addModel(modelDollyX);
+        p->addModel(modelOraculus);
+        p->addModel(modelRaiju);
+        p->addModel(modelSphinx);
+        p->addModel(modelBrainz);
+        p->addModel(modelBukavac);
+        p->addModel(modelDungeon);
+        p->addModel(modelKitsune);
+        p->addModel(modelOubliette);
+        p->addModel(modelMedusa);
+        p->addModel(modelAion);
+        p->addModel(modelWerewolf);
+        p->addModel(modelAlchemist);
+        p->addModel(modelChronos);
+        p->addModel(modelFortuna);
+        p->addModel(modelAlembic);
+        p->addModel(modelDenki);
+        p->addModel(modelManus);
+        p->addModel(modelCrucible);
+
+        getMonstersDefaultTheme();
+    }
+}
+
 static void initStatic__SanguineMutants()
 {
     Plugin* const p = new Plugin;
@@ -3827,6 +3868,7 @@ void initStaticPlugins()
     initStatic__RCM();
     initStatic__RebelTech();
     initStatic__repelzen();
+    initStatic__SanguineMonsters();
     initStatic__SanguineMutants();
     initStatic__Sapphire();
     initStatic__sonusmodular();

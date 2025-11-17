@@ -269,3 +269,6 @@
 [submodule "plugins/SanguineMutants"]
 	path = plugins/SanguineMutants
 	url = https://github.com/Bloodbat/SanguineMutants
+[submodule "plugins/SanguineMonsters"]
+	path = plugins/SanguineMonsters
+	url = https://github.com/Bloodbat/SanguineMonsters
