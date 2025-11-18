@@ -188,6 +188,7 @@ At the moment the following 3rd-party modules are provided:
 - [RCM](https://github.com/Rcomian/rcm-modules/)
 - [RebelTech](https://github.com/hemmer/rebel-tech-vcv)
 - [repelzen](https://github.com/wiqid/repelzen)
+- [Sanguine Monsters](https://github.com/Bloodbat/SanguineMonsters)
 - [Sapphire](https://github.com/cosinekitty/sapphire)
 - [Sonus Modular](https://gitlab.com/sonusdept/sonusmodular)
 - [stocaudio](https://github.com/aptrn/stocaudio-modules)
