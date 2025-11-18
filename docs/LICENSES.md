@@ -82,6 +82,7 @@ Below follows a list of all code licenses used in Cardinal and linked submodules
 | RCM                     | GPL-2.0-or-later         | |
 | repelzen                | GPL-3.0-or-later         | |
 | RebelTech               | GPL-2.0-or-later         | |
+| Sanguine Monsters       | GPL-3.0-or-later         | |
 | Sapphire                | GPL-3.0-or-later         | |
 | Sonus Modular           | GPL-3.0-or-later         | |
 | Starling Via            | MIT                      | |
@@ -251,6 +252,7 @@ Below is a list of artwork licenses from plugins
 | RCM/*                                   | GPL-2.0-or-later | No artwork specific license provided |
 | repelzen/*                              | CC-BY-SA-4.0     | |
 | RebelTech/*                             | CC-BY-NC-4.0     | |
+| Sanguine Monsters/*                     | CC-BY-NC-4.0     | |
 | Sapphire/*                              | GPL-3.0-or-later | No artwork specific license provided |
 | sonusmodular/*                          | GPL-3.0-or-later | [Same license as source code](https://gitlab.com/sonusdept/sonusmodular/-/issues/14) |
 | StarlingVia/*                           | MIT              | No artwork specific license provided |
